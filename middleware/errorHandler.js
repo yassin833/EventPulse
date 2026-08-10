@@ -14,6 +14,7 @@ class AppError extends Error{
 }
 
 const errorHandler = (err, req, res, next) => {
+  let error = err;
   if (err.name === 'CastError') {
     const message = `Invalid ${err.path}: ${err.value}`;
     error = new AppError(message, 400);
@@ -29,7 +30,6 @@ const errorHandler = (err, req, res, next) => {
     error = new AppError(message, 400);
   }
 
-  let error = err;
   const message = err.message || 'Internal server error';
   const statusCode = err.statusCode || 500;
   const status = err.status || 'error';

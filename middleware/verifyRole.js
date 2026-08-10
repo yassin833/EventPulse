@@ -1,4 +1,4 @@
-const AppError = require('./errorHandler.js');
+const {AppError} = require('./errorHandler.js');
 
 const verifyRole = (...allowedRoles) => {
   return (req, res, next) => {
@@ -7,7 +7,7 @@ const verifyRole = (...allowedRoles) => {
     }
 
     if (!allowedRoles.includes(req.user.role)) {
-      return next(new AppError('User cannot access this route', 403));
+      return next(new AppError('User cannot perform this action', 403));
     }
 
     next();

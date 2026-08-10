@@ -4,6 +4,7 @@ const app = express();
 const connectDB = require('./config/db.js');
 const {errorHandler, AppError} = require('./middleware/errorHandler.js');
 const userRoutes = require('./routes/userRoutes.js');
+const eventRoutes = require('./routes/eventRoutes.js');
 const PORT = process.env.PORT;
 
 app.use(express.json());
@@ -13,6 +14,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/users', userRoutes);
+app.use('/api/events', eventRoutes);
 
 // 404 error-handler
 app.use((req, res, next) => {

@@ -26,15 +26,12 @@ const eventSchema = new mongoose.Schema({
     required: [true, 'Please specify event capacity'],
     min: [1, 'Capacity must be at least 1']
   },
-  category: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Category',
-    required: [true, 'Please assign a category']
-  },
+  
   createdBy: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
+    ref: 'User',
+    required: [true, "The creator's name is required"]
   }
-}, { timestamps: true });
+}, {timestamps: true});
 
 module.exports = mongoose.model('Event', eventSchema);
