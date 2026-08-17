@@ -69,17 +69,38 @@ async function deleteEvent(req, res, next) {
 }
 
 async function getAllEvents(req, res, next) {
-  const {search, sort, selectStr} = req.query;
+  const {title, category, city, date, sort, selectStr} = req.query;
 
   const page = Math.max(1, parseInt(req.query.page, 10) || 1);
   const limit = Math.max(1, parseInt(req.query.limit, 10) || 10);
   const skip = (page - 1) * limit;
 
-  // Filter
-  const filter = {};
-  if (search) {
-    filter.title = {$regex: search, $options: 'i'};
+  function filterString(strObj) {
+    const filter = {};
+    const allowedQueries = ['title', 'category', 'city', 'date'];
+    for (const [key, value] of Object.entries(strObj)) {
+      if (allowedQueries.includes(key) && value) {
+        if (key === 'date') {
+          const start = new Date(value);
+          const end = new Date(start);
+          const startDay = end.getDate();
+          const endDay = startDay + 1;
+          end.setDate(endDay);
+          console.log(`start date: ${startDay}`);
+          console.log(`end date: ${endDay}`);
+          console.log(`start date: ${start}`);
+          filter[key] = {$lt: end, $gte: start};
+          continue;
+        }
+        filter[key] = {$regex: value, $options: 'i'};
+      }
+    }
+    return filter;
   }
+
+  // Filter
+  const filter = filterString({title, category, city, date});
+  console.log(filter);
 
   // Sort
   let sortBy = {createdAt: -1};

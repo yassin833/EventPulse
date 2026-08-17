@@ -26,7 +26,10 @@ const eventSchema = new mongoose.Schema({
     required: [true, 'Please specify event capacity'],
     min: [1, 'Capacity must be at least 1']
   },
-  
+  category: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Category'
+  },
   createdBy: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
