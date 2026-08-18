@@ -1,6 +1,10 @@
 const { errorMessage } = require("../utils/messages");
 const NODE_ENV = process.env.NODE_ENV;
 
+const asyncHandler = (fn) => (req, res, next) => {
+  Promise.resolve(fn(req, res, next)).catch(next);
+};
+
 class AppError extends Error{
   constructor(message, statusCode, stack, data=null) {
     super(message);
@@ -22,7 +26,7 @@ const errorHandler = (err, req, res, next) => {
   if (err.code === 11000) {
     const value = Object.keys(err.keyValue).join(', ');
     const message = `Duplicate field value entered for: ${value}. Please use another value!`;
-    error = new AppError(message, 400);
+    error = new AppError(message, 409);
   }
   if (err.name === 'ValidationError') {
     const errors = Object.values(err.errors).map(e => e.message);
@@ -42,4 +46,4 @@ const errorHandler = (err, req, res, next) => {
   return errorMessage(res, statusCode, message, status, stack, data);
 }
 
-module.exports = {AppError, errorHandler};
+module.exports = {AppError, errorHandler, asyncHandler};

@@ -21,6 +21,11 @@ const eventSchema = new mongoose.Schema({
     required: [true, 'Please add a city'],
     trim: true
   },
+  venue: {
+    type: String,
+    required: [true, 'Please add a venue'], 
+    trim: true 
+  },
   capacity: {
     type: Number,
     required: [true, 'Please specify event capacity'],
@@ -37,4 +42,5 @@ const eventSchema = new mongoose.Schema({
   }
 }, {timestamps: true});
 
-module.exports = mongoose.model('Event', eventSchema);
+const Event = mongoose.model('Event', eventSchema);
+module.exports = Event;

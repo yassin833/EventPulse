@@ -69,7 +69,7 @@ async function deleteEvent(req, res, next) {
 }
 
 async function getAllEvents(req, res, next) {
-  const {title, category, city, date, sort, selectStr} = req.query;
+  const {search, category, city, startDate, endDate, sortBy, order, selectStr} = req.query;
 
   const page = Math.max(1, parseInt(req.query.page, 10) || 1);
   const limit = Math.max(1, parseInt(req.query.limit, 10) || 10);
@@ -77,19 +77,20 @@ async function getAllEvents(req, res, next) {
 
   function filterString(strObj) {
     const filter = {};
-    const allowedQueries = ['title', 'category', 'city', 'date'];
+    const allowedQueries = ['search', 'category', 'city', 'startDate', 'endDate'];
     for (const [key, value] of Object.entries(strObj)) {
       if (allowedQueries.includes(key) && value) {
-        if (key === 'date') {
-          const start = new Date(value);
-          const end = new Date(start);
-          const startDay = end.getDate();
-          const endDay = startDay + 1;
-          end.setDate(endDay);
-          console.log(`start date: ${startDay}`);
-          console.log(`end date: ${endDay}`);
-          console.log(`start date: ${start}`);
-          filter[key] = {$lt: end, $gte: start};
+        if (key === 'startDate' || key === 'endDate') {
+          filter.date = {};
+          if (startDate) filter.date.$gte = new Date(startDate);
+          if (endDate) filter.date.$lt = new Date(endDate);
+          continue;
+        }
+        else if (key === 'search') {
+          filter.$or = [
+            {title: {$regex: search, $options: 'i'}},
+            {description: {$regex: search, $options: 'i'}}
+          ];
           continue;
         }
         filter[key] = {$regex: value, $options: 'i'};
@@ -99,16 +100,13 @@ async function getAllEvents(req, res, next) {
   }
 
   // Filter
-  const filter = filterString({title, category, city, date});
-  console.log(filter);
+  const filter = filterString({search, category, city, startDate, endDate});
 
   // Sort
-  let sortBy = {createdAt: -1};
-  if (sort) {
-    const isDescending = sort.startsWith('-');
-    const field = isDescending ? sort.substring(1): sort;
-    sortBy = {[field]: isDescending ? -1: 1}
-  }
+  const allowedFields = ['date', 'registrations'];
+  const sortField = allowedFields.includes(sortBy) ? sortBy : 'date';
+  const sortDirection = order === 'desc' ? -1 : 1;
+  const sort = {[sortField]: sortDirection};
 
   // Select
   let fields = '-__v';
@@ -116,16 +114,38 @@ async function getAllEvents(req, res, next) {
     fields = selectStr.split(',').map(f => f.trim()).join(' ');
   }
 
-  const [data, totalDocuments] = await Promise.all([
-    Event.find(filter)
-      .limit(limit)
-      .skip(skip)
-      .sort(sortBy)
-      .select(fields)
-      .lean(),
 
-    Event.countDocuments(filter)
-  ]);
+  let data;
+  let totalDocuments;
+  if (sortField === 'registrations') {
+    const aggregate = Event.aggregate();
+    [data, totalDocuments] = await Promise.all([
+      aggregate.match(filter)
+      .lookup({from: 'registrations', localField: '_id', foreignField: 'event', pipeline: [{ $match: { status: 'confirmed' } }], as: 'registrations'})
+      .addFields({
+        registrations: {$size: '$registrations'}
+      })
+      .sort(sort)
+      .skip(skip)
+      .limit(limit)
+      .project(fields),
+      
+      Event.countDocuments(filter)
+    ]);
+  }
+
+  else {
+    [data, totalDocuments] = await Promise.all([
+      Event.find(filter)
+        .limit(limit)
+        .skip(skip)
+        .sort(sort)
+        .select(fields)
+        .lean(),
+
+      Event.countDocuments(filter)
+    ]);
+  }
 
   const totalPages = Math.ceil(totalDocuments / limit);
 

@@ -5,6 +5,7 @@ const connectDB = require('./config/db.js');
 const {errorHandler, AppError} = require('./middleware/errorHandler.js');
 const userRoutes = require('./routes/userRoutes.js');
 const eventRoutes = require('./routes/eventRoutes.js');
+const registrationRoutes = require('./routes/registrationRoutes.js');
 const PORT = process.env.PORT;
 
 app.use(express.json());
