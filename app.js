@@ -16,6 +16,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/users', userRoutes);
 app.use('/api/events', eventRoutes);
+app.use('/api/registrations', registrationRoutes);
 
 // 404 error-handler
 app.use((req, res, next) => {
