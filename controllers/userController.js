@@ -9,7 +9,7 @@ const signToken = (id, role) => {
   return jwt.sign({id, role}, JWT_SECRET, {expiresIn: JWT_EXPIRES_IN});
 }
 
-async function register(req, res, next) {
+async function register(req, res) {
   const {name, email, password} = req.body;
   const user = await User.create({
     name,

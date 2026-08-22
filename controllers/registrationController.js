@@ -1,6 +1,5 @@
 const Registration = require('../models/registration.model.js');
 const Event = require('../models/event.model.js');
-const User = require('../models/user.model.js');
 const {AppError} = require('../middleware/errorHandler.js');
 const {successMessage} = require('../utils/messages.js');
 

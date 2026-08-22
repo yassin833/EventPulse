@@ -1,12 +1,19 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
+const {createServer} = require('http');
+const server = createServer(app);
+const startSocketServer = require('./config/socket.js');
 const connectDB = require('./config/db.js');
 const {errorHandler, AppError} = require('./middleware/errorHandler.js');
 const userRoutes = require('./routes/userRoutes.js');
 const eventRoutes = require('./routes/eventRoutes.js');
+const announceRoutes = require('./routes/announceRoutes.js');
 const registrationRoutes = require('./routes/registrationRoutes.js');
 const PORT = process.env.PORT;
+
+const io = startSocketServer(server);
+app.set('io', io)
 
 app.use(express.json());
 
@@ -17,6 +24,7 @@ app.get('/', (req, res) => {
 app.use('/api/users', userRoutes);
 app.use('/api/events', eventRoutes);
 app.use('/api/registrations', registrationRoutes);
+app.use('/api/announcements', announceRoutes);
 
 // 404 error-handler
 app.use((req, res, next) => {
@@ -28,7 +36,7 @@ app.use(errorHandler);
 
 const startServer = async () => {
   await connectDB();
-  app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
+  server.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
 }
 
 startServer();

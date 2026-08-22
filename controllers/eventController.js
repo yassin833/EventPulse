@@ -3,7 +3,7 @@ const Event = require('../models/event.model.js');
 const Registration = require('../models/registration.model.js');
 const { successMessage } = require('../utils/messages.js');
 
-async function createEvent(req, res, next) {
+async function createEvent(req, res) {
   const {title, description, date, city, capacity} = req.body;
   const userId = req.user._id;
   const event = await Event.create({
@@ -68,7 +68,7 @@ async function deleteEvent(req, res, next) {
   return successMessage(res, 200, 'Event specified is deleted', eventToDelete);
 }
 
-async function getAllEvents(req, res, next) {
+async function getAllEvents(req, res) {
   const {search, category, city, startDate, endDate, sortBy, order, selectStr} = req.query;
 
   const page = Math.max(1, parseInt(req.query.page, 10) || 1);
