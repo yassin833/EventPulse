@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
+const path = require('path');
 const morgan = require('morgan');
 const {createServer} = require('http');
 const server = createServer(app);
@@ -9,7 +10,7 @@ const connectDB = require('./config/db.js');
 connectDB().catch(err => console.error('DB connection failed:', err));
 const {errorHandler, AppError} = require('./middleware/errorHandler.js');
 const swaggerUi = require('swagger-ui-express');
-const swaggerSpec = require('./config/swagger.js');
+const swaggerSpec = require(path.join(__dirname, 'config/swagger.js'));
 const userRoutes = require('./routes/userRoutes.js');
 const eventRoutes = require('./routes/eventRoutes.js');
 const announceRoutes = require('./routes/announceRoutes.js');
