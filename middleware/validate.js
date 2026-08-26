@@ -1,4 +1,4 @@
-const {body, param, validationResult} = require('express-validator');
+const {body, param, query, validationResult} = require('express-validator');
 const {AppError} = require('./errorHandler.js');
 
 const registerRules = [
@@ -27,8 +27,8 @@ const registerRules = [
 
 const loginRules = [
   body('email')
-    .isEmail()
-    .withMessage('Please enter a valid email'),
+    .notEmpty()
+    .withMessage('Please enter your email'),
   body('password')
     .notEmpty()
     .withMessage('Please enter your password')
@@ -103,6 +103,41 @@ const updateEventRules = [
     .withMessage('Invalid category ID')
 ];
 
+const getEventsRules = [
+  query('search')
+    .optional()
+    .toLowerCase()
+    .isIn(['title', 'description'])
+    .withMessage('search only supports title and description'),
+  query('startDate')
+    .optional()
+    .isISO8601()
+    .withMessage('This is not a valid date'),
+  query('endDate')
+    .optional()
+    .isISO8601()
+    .withMessage('This is not a valid date'),
+  query('city')
+    .trim(),
+  query('venue')
+    .trim(),
+  query('category')
+    .optional()
+    .isMongoId()
+    .withMessage('Invalid category ID'),
+  query('sortBy')
+    .optional()
+    .toLowerCase()
+    .isIn(['date', 'registrations']),
+  query('order')
+    .optional()
+    .toLowerCase()
+    .isIn(['asc', 'desc'])
+    .withMessage('Values for order can only be asc for ascending and desc for descending'),
+  query('selectStr')
+    .optional()
+];
+
 const registrationRules = [
   body('eventId')
     .isMongoId()
@@ -136,5 +171,6 @@ module.exports = {
   createEventRules, 
   updateEventRules, 
   registrationRules,
-  messageRules
+  messageRules,
+  getEventsRules
 };

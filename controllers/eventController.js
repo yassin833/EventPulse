@@ -1,11 +1,16 @@
 const { AppError } = require('../middleware/errorHandler.js');
 const Event = require('../models/event.model.js');
 const Registration = require('../models/registration.model.js');
+const Category = require('../models/category.model.js');
 const { successMessage } = require('../utils/messages.js');
 
-async function createEvent(req, res) {
+async function createEvent(req, res, next) {
   const {title, description, date, city, capacity, category, venue} = req.body;
   const userId = req.user._id;
+  const categoryExists = await Category.findById(category);
+  if (!categoryExists) {
+    return next(new AppError('Category specified does not exist', 404));
+  }
   const event = await Event.create({
     title,
     description,
@@ -49,8 +54,14 @@ async function updateEvent(req, res, next) {
   }
 
   const allowedUpdates = ['title', 'description', 'date', 'city', 'venue', 'capacity', 'category'];
-  allowedUpdates.forEach(field => {
+  allowedUpdates.forEach(async field => {
     if (req.body[field] !== undefined) {
+      if (req.body.category) {
+        const categoryExists = await Category.findById(req.body.category);
+        if (!categoryExists) {
+          return next(new AppError('Category specified does not exist', 404));
+        }
+      }
       eventToUpdate[field] = req.body[field];
     }
   });

@@ -8,6 +8,8 @@ const startSocketServer = require('./config/socket.js');
 const connectDB = require('./config/db.js');
 connectDB().catch(err => console.error('DB connection failed:', err));
 const {errorHandler, AppError} = require('./middleware/errorHandler.js');
+const swaggerUi = require('swagger-ui-express');
+const swaggerSpec = require('./config/swagger.js');
 const userRoutes = require('./routes/userRoutes.js');
 const eventRoutes = require('./routes/eventRoutes.js');
 const announceRoutes = require('./routes/announceRoutes.js');
@@ -18,12 +20,15 @@ const NODE_ENV = process.env.NODE_ENV;
 const io = startSocketServer(server);
 app.set('io', io);
 
+
 app.use(express.json());
 if (NODE_ENV === 'production') {
   app.use(morgan('combined'));
 } else {
   app.use(morgan('dev'));
 }
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.get('/health', (req, res) => {
   function formatTime(seconds) {

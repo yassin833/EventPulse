@@ -29,7 +29,7 @@ async function login(req, res, next) {
 
   const user = await User.findOne({email}).select('+password');
   if (!user || !(await user.matchPassword(password))) {
-    return next(new AppError('Incorrect email or password', 400));
+    return next(new AppError('Incorrect email or password', 401));
   }
   const token = signToken(user._id, user.role);
   const userObj = user.toObject();
