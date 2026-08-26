@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
+const morgan = require('morgan');
 const {createServer} = require('http');
 const server = createServer(app);
 const startSocketServer = require('./config/socket.js');
@@ -11,17 +12,38 @@ const eventRoutes = require('./routes/eventRoutes.js');
 const announceRoutes = require('./routes/announceRoutes.js');
 const registrationRoutes = require('./routes/registrationRoutes.js');
 const PORT = process.env.PORT;
+const NODE_ENV = process.env.NODE_ENV;
 
 const io = startSocketServer(server);
-app.set('io', io)
+app.set('io', io);
 
 app.use(express.json());
+if (NODE_ENV === 'production') {
+  app.use(morgan('combined'));
+} else {
+  app.use(morgan('dev'));
+}
+
+app.get('/health', (req, res) => {
+  function formatTime(seconds) {
+    const hours = Math.floor((seconds % (3600 * 24)) / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+
+    return `${hours}h ${minutes}m ${seconds}s`;
+  }
+  res.status(200).json({
+    status: 'ok',
+    environment: NODE_ENV,
+    uptime: formatTime(process.uptime()),
+    connectionStatus: 'connected'
+});
+});
 
 app.get('/', (req, res) => {
   res.send('Welcome to our EventPulse website');
 });
 
-app.use('/api/users', userRoutes);
+app.use('/api/auth', userRoutes);
 app.use('/api/events', eventRoutes);
 app.use('/api/registrations', registrationRoutes);
 app.use('/api/announcements', announceRoutes);
@@ -39,4 +61,8 @@ const startServer = async () => {
   server.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
 }
 
-startServer();
+if (require.main === module) {
+  startServer();
+}
+
+module.exports = app;

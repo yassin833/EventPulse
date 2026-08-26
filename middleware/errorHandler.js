@@ -2,7 +2,7 @@ const { errorMessage } = require("../utils/messages");
 const NODE_ENV = process.env.NODE_ENV;
 
 const asyncHandler = (fn) => (req, res, next) => {
-  Promise.resolve(fn(req, res, next)).catch(next);
+  return Promise.resolve(fn(req, res, next)).catch(next);
 };
 
 class AppError extends Error{
@@ -34,13 +34,13 @@ const errorHandler = (err, req, res, next) => {
     error = new AppError(message, 400);
   }
 
-  const message = err.message || 'Internal server error';
-  const statusCode = err.statusCode || 500;
-  const status = err.status || 'error';
-  const data = err.data ?? null;
+  const message = error.message || 'Internal server error';
+  const statusCode = error.statusCode || 500;
+  const status = error.status || 'error';
+  const data = error.data ?? null;
   let stack;
   if (NODE_ENV === 'development') {
-    stack = err.stack;
+    stack = error.stack;
   }
 
   return errorMessage(res, statusCode, message, status, stack, data);

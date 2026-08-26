@@ -17,9 +17,8 @@ async function createAnnouncements(req, res, next) {
     sender,
     text
   });
-  io.to(`event_${event}`).emit('announcement', {
-    announcement
-  });
+  const roomName = `event_${event}`;
+  io.to(roomName).emit('announcement', { announcement });
   return successMessage(res, 201, 'Announcement was sent successfully', announcement);
 }
 

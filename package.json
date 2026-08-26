@@ -4,10 +4,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --runInBand",
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "seed": "node scripts/seed.js"
+    "seed": "node seed.js"
   },
   "keywords": [],
   "type": "commonjs",
@@ -17,14 +17,19 @@
     "express": "^5.2.1",
     "express-validator": "^7.3.2",
     "jsonwebtoken": "^9.0.3",
+    "mongodb": "^7.6.0",
     "mongoose": "^9.9.1",
-    "socket.io": "^4.8.3"
+    "morgan": "^1.11.0",
+    "socket.io": "^4.8.3",
+    "socket.io-client": "^4.8.3"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@eslint/json": "^2.0.1",
     "eslint": "^10.8.1",
     "globals": "^17.11.0",
-    "nodemon": "^3.1.14"
+    "jest": "^30.4.2",
+    "nodemon": "^3.1.14",
+    "supertest": "^7.2.2"
   }
 }

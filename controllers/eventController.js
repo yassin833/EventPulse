@@ -4,14 +4,16 @@ const Registration = require('../models/registration.model.js');
 const { successMessage } = require('../utils/messages.js');
 
 async function createEvent(req, res) {
-  const {title, description, date, city, capacity} = req.body;
+  const {title, description, date, city, capacity, category, venue} = req.body;
   const userId = req.user._id;
   const event = await Event.create({
     title,
     description,
     date,
     city,
+    venue,
     capacity,
+    category,
     createdBy: userId
   });
   return successMessage(res, 201, 'Event created successfully', event);
@@ -19,7 +21,7 @@ async function createEvent(req, res) {
 
 async function getEventById(req, res, next) {
   const eventId = req.params.id;
-  const event = await Event.findById(eventId).lean();
+  const event = await Event.findById(eventId).populate().lean();
   if (!event) {
     return next(new AppError('Event specified is not found', 404));
   }
@@ -46,7 +48,7 @@ async function updateEvent(req, res, next) {
     }
   }
 
-  const allowedUpdates = ['title', 'description', 'date', 'city', 'capacity'];
+  const allowedUpdates = ['title', 'description', 'date', 'city', 'venue', 'capacity', 'category'];
   allowedUpdates.forEach(field => {
     if (req.body[field] !== undefined) {
       eventToUpdate[field] = req.body[field];

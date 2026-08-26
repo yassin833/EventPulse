@@ -4,7 +4,7 @@ const {AppError} = require('../middleware/errorHandler.js');
 const {successMessage} = require('../utils/messages.js');
 
 async function registerForEvent(req, res, next) {
-  const eventId = req.body.event;
+  const eventId = req.body.eventId;
   const userId = req.user._id;
   const eventToRegister = await Event.findById(eventId);
   if (!eventToRegister) {
