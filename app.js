@@ -6,6 +6,7 @@ const {createServer} = require('http');
 const server = createServer(app);
 const startSocketServer = require('./config/socket.js');
 const connectDB = require('./config/db.js');
+connectDB().catch(err => console.error('DB connection failed:', err));
 const {errorHandler, AppError} = require('./middleware/errorHandler.js');
 const userRoutes = require('./routes/userRoutes.js');
 const eventRoutes = require('./routes/eventRoutes.js');
