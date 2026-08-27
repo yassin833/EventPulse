@@ -8,6 +8,7 @@ const eventSchema = new mongoose.Schema({
   },
   description: {
     type: String,
+    trim: true,
     required: [true, 'Please add a description'],
     minlength: [5, 'Description must be at least 5 characters'],
     maxlength: [100, 'Description CANNOT exceed 100 characters']
@@ -21,6 +22,11 @@ const eventSchema = new mongoose.Schema({
     required: [true, 'Please add a city'],
     trim: true
   },
+  venue: {
+    type: String,
+    required: [true, 'Please add a venue'], 
+    trim: true 
+  },
   capacity: {
     type: Number,
     required: [true, 'Please specify event capacity'],
@@ -28,13 +34,14 @@ const eventSchema = new mongoose.Schema({
   },
   category: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Category',
-    required: [true, 'Please assign a category']
+    ref: 'Category'
   },
   createdBy: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
+    ref: 'User',
+    required: [true, "The creator's name is required"]
   }
-}, { timestamps: true });
+}, {timestamps: true});
 
-module.exports = mongoose.model('Event', eventSchema);
+const Event = mongoose.model('Event', eventSchema);
+module.exports = Event;

@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: [true, 'Please add a password'],
-    minlength: 6,
+    minlength: [6, 'Password must be at least 6 characters'],
     select: false
   },
   role: {
@@ -38,4 +38,5 @@ userSchema.methods.matchPassword = async function (enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password);
 };
 
-module.exports = mongoose.model('User', userSchema);
+const User = mongoose.model('User', userSchema);
+module.exports = User;
