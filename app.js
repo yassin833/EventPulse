@@ -7,7 +7,6 @@ const {createServer} = require('http');
 const server = createServer(app);
 const startSocketServer = require('./config/socket.js');
 const connectDB = require('./config/db.js');
-connectDB().catch(err => console.error('DB connection failed:', err));
 const {errorHandler, AppError} = require('./middleware/errorHandler.js');
 const swaggerSpec = require(path.join(__dirname, 'config/swagger.js'));
 const userRoutes = require('./routes/userRoutes.js');
@@ -90,7 +89,9 @@ app.use((req, res, next) => {
 app.use(errorHandler);
 
 const startServer = async () => {
-  await connectDB();
+  if (NODE_ENV !== 'test') {
+    await connectDB();
+  }
   server.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
 }
 

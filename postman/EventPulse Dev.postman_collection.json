@@ -1,0 +1,1799 @@
+{
+  "info": {
+    "_postman_id": "87b54a6e-666d-4e74-b6aa-dc0ce3399ad3",
+    "name": "EventPulse Dev",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "55900221",
+    "_collection_link": "https://go.postman.co/collection/55900221-87b54a6e-666d-4e74-b6aa-dc0ce3399ad3?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register account",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"yassin\",\r\n    \"email\": \"yasso123@mail.com\",\r\n    \"password\": \"password123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/register",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Register account",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"yassin\",\r\n    \"email\": \"admin@eventpulse.com\",\r\n    \"password\": \"password123\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/auth/register",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "auth",
+                    "register"
+                  ]
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "1627"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"65b-tuuMu6ypGj41yhDBiutiWpXB34M\""
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 27 Aug 2026 14:18:22 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"fail\",\n  \"message\": \"Duplicate field value entered for: email. Please use another value!\",\n  \"data\": null,\n  \"stack\": \"Error: Duplicate field value entered for: email. Please use another value!\\n    at errorHandler (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\middleware\\\\errorHandler.js:29:13)\\n    at Layer.handleError (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\node_modules\\\\router\\\\lib\\\\layer.js:116:17)\\n    at trimPrefix (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\node_modules\\\\router\\\\index.js:340:13)\\n    at F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\node_modules\\\\router\\\\index.js:297:9\\n    at processParams (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\node_modules\\\\router\\\\index.js:582:12)\\n    at next (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\node_modules\\\\router\\\\index.js:291:5)\\n    at Layer.handleError (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\node_modules\\\\router\\\\lib\\\\layer.js:111:12)\\n    at trimPrefix (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\node_modules\\\\router\\\\index.js:340:13)\\n    at F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\node_modules\\\\router\\\\index.js:297:9\\n    at processParams (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\node_modules\\\\router\\\\index.js:582:12)\"\n}"
+            },
+            {
+              "name": "Register account",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"yassin\",\r\n    \"email\": \"yasso123@mail.com\",\r\n    \"password\": \"password123\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/auth/register",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "auth",
+                    "register"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "251"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"fb-dlQnZikTnKWkTzlWnEtqW2oscIo\""
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 27 Aug 2026 14:19:07 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"success\",\n  \"message\": \"Account created successfully\",\n  \"data\": {\n    \"name\": \"yassin\",\n    \"email\": \"yasso123@mail.com\",\n    \"role\": \"attendee\",\n    \"_id\": \"6a90475b9a1792c96e692ec4\",\n    \"createdAt\": \"2026-08-27T14:19:07.665Z\",\n    \"updatedAt\": \"2026-08-27T14:19:07.665Z\",\n    \"__v\": 0\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Login account",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"admin@eventpulse.com\",\r\n    \"password\": \"password123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Login account",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\": \"alice@eventpulse.com\",\r\n    \"password\": \"123456\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/auth/login",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "252"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"fc-5FvWEhQ5X3AHaXHAy/aoBHVP7Ls\""
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 27 Aug 2026 14:19:31 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"fail\",\n  \"message\": \"Incorrect email or password\",\n  \"data\": null,\n  \"stack\": \"Error: Incorrect email or password\\n    at login (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\controllers\\\\userController.js:32:17)\"\n}"
+            },
+            {
+              "name": "Login account",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\": \"alice@eventpulse.com\",\r\n    \"password\": \"password123\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/auth/login",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "479"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"1df-XQFHqXDSh0Ki0kxsjYcT2a8I61o\""
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 27 Aug 2026 14:20:08 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"success\",\n  \"message\": \"User logged in successfully\",\n  \"data\": {\n    \"userObj\": {\n      \"_id\": \"6a8ef19454ac97683de6d0b2\",\n      \"name\": \"Alice Attendee\",\n      \"email\": \"alice@eventpulse.com\",\n      \"role\": \"attendee\",\n      \"createdAt\": \"2026-08-26T14:00:52.643Z\",\n      \"updatedAt\": \"2026-08-26T14:00:52.643Z\",\n      \"__v\": 0\n    },\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhOGVmMTk0NTRhYzk3NjgzZGU2ZDBiMiIsInJvbGUiOiJhdHRlbmRlZSIsImlhdCI6MTc4Nzg0MDQwOCwiZXhwIjoxNzg3OTI2ODA4fQ.nJVoK6G0Mn0swDc2duz5QrqaR7pCYv_HkeoC_UJSqL8\"\n  }\n}"
+            },
+            {
+              "name": "Login account",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\": \"admin@eventpulse.com\",\r\n    \"password\": \"password123\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/auth/login",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "468"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"1d4-x30RYZQEF4JlXGswPNIHZEuq45o\""
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 27 Aug 2026 14:33:51 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"success\",\n  \"message\": \"User logged in successfully\",\n  \"data\": {\n    \"userObj\": {\n      \"_id\": \"6a8ef19454ac97683de6d0b1\",\n      \"name\": \"Admin User\",\n      \"email\": \"admin@eventpulse.com\",\n      \"role\": \"admin\",\n      \"createdAt\": \"2026-08-26T14:00:52.475Z\",\n      \"updatedAt\": \"2026-08-26T14:00:52.475Z\",\n      \"__v\": 0\n    },\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhOGVmMTk0NTRhYzk3NjgzZGU2ZDBiMSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4Nzg0MTIzMSwiZXhwIjoxNzg3OTI3NjMxfQ.bE2aSBk1tfCUWTLoaU2hFv5Iidv6BgJa8L6v_B0z50s\"\n  }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Events",
+      "item": [
+        {
+          "name": "Create event",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Backend Engineering Summit\",\r\n    \"description\": \"Talks on Node.js, databases, and system design\",\r\n    \"date\": \"2026-10-01T00:00:00.000Z\",\r\n    \"city\": \"Giza\",\r\n    \"venue\": \"Smart Village Conference Hall\",\r\n    \"capacity\": 2,\r\n    \"category\": \"6a8ef19454ac97683de6d0af\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/events",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "events"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Create event",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\": \"Backend Engineering Summit\",\r\n    \"description\": \"Talks on Node.js, databases, and system design\",\r\n    \"date\": \"2026-10-01T00:00:00.000Z\",\r\n    \"city\": \"Giza\",\r\n    \"venue\": \"Smart Village Conference Hall\",\r\n    \"capacity\": 2,\r\n    \"category\": \"6a8ef19454ac97683de6d0af\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/events",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "1576"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"628-qP1cSViubfHOFM7BXWA/2QKojKs\""
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 27 Aug 2026 14:27:21 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"fail\",\n  \"message\": \"User not logged in, please log in\",\n  \"data\": null,\n  \"stack\": \"Error: User not logged in, please log in\\n    at protect (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\middleware\\\\authMiddleware.js:9:17)\\n    at Layer.handleRequest (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\node_modules\\\\router\\\\lib\\\\layer.js:152:17)\\n    at next (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\node_modules\\\\router\\\\lib\\\\route.js:157:13)\\n    at Route.dispatch (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\node_modules\\\\router\\\\lib\\\\route.js:117:3)\\n    at handle (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\node_modules\\\\router\\\\index.js:435:11)\\n    at Layer.handleRequest (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\node_modules\\\\router\\\\lib\\\\layer.js:152:17)\\n    at F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\node_modules\\\\router\\\\index.js:295:15\\n    at processParams (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\node_modules\\\\router\\\\index.js:582:12)\\n    at next (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\node_modules\\\\router\\\\index.js:291:5)\\n    at router.handle (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\node_modules\\\\router\\\\index.js:186:3)\"\n}"
+            },
+            {
+              "name": "Create event",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\": \"Backend Engineering Summit\",\r\n    \"description\": \"Talks on Node.js, databases, and system design\",\r\n    \"date\": \"2026-10-01T00:00:00.000Z\",\r\n    \"city\": \"Giza\",\r\n    \"venue\": \"Smart Village Conference Hall\",\r\n    \"capacity\": 2,\r\n    \"category\": \"6a8ef19454ac97683de6d0af\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/events",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "465"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"1d1-ldGVII177e5cLwJODZZGifRvt6o\""
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 27 Aug 2026 14:35:20 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"success\",\n  \"message\": \"Event created successfully\",\n  \"data\": {\n    \"title\": \"Backend Engineering Summit\",\n    \"description\": \"Talks on Node.js, databases, and system design\",\n    \"date\": \"2026-10-01T00:00:00.000Z\",\n    \"city\": \"Giza\",\n    \"venue\": \"Smart Village Conference Hall\",\n    \"capacity\": 2,\n    \"category\": \"6a8ef19454ac97683de6d0af\",\n    \"createdBy\": \"6a8ef19454ac97683de6d0b1\",\n    \"_id\": \"6a904b289a1792c96e692ec5\",\n    \"createdAt\": \"2026-08-27T14:35:20.842Z\",\n    \"updatedAt\": \"2026-08-27T14:35:20.842Z\",\n    \"__v\": 0\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get events",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/events",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "events"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get events",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/events",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "2284"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"8ec-uPWfVE9MgkX26+Wv40yr0viU5uI\""
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 27 Aug 2026 14:35:45 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"success\",\n  \"message\": \"Events retrieved successfully\",\n  \"data\": {\n    \"events\": [\n      {\n        \"_id\": \"6a8f646ce7ec401d37da2e1e\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"date\": \"2026-08-26T00:00:00.000Z\",\n        \"city\": \"string\",\n        \"venue\": \"string\",\n        \"capacity\": 1,\n        \"category\": \"6a8ef19454ac97683de6d0af\",\n        \"createdBy\": \"6a8ef19454ac97683de6d0b1\",\n        \"createdAt\": \"2026-08-26T22:10:52.979Z\",\n        \"updatedAt\": \"2026-08-26T22:10:52.979Z\"\n      },\n      {\n        \"_id\": \"6a8f6799d46fccbde0f6915b\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"date\": \"2026-08-26T00:00:00.000Z\",\n        \"city\": \"string\",\n        \"venue\": \"string\",\n        \"capacity\": 100,\n        \"category\": \"6a8ef19454ac97683de6d0af\",\n        \"createdBy\": \"6a8ef19454ac97683de6d0b1\",\n        \"createdAt\": \"2026-08-26T22:24:25.613Z\",\n        \"updatedAt\": \"2026-08-26T22:24:25.613Z\"\n      },\n      {\n        \"_id\": \"6a8ef19454ac97683de6d0b4\",\n        \"title\": \"Elden Ring Live Concert\",\n        \"description\": \"An orchestral tribute to the Elden Ring soundtrack\",\n        \"date\": \"2026-09-15T00:00:00.000Z\",\n        \"city\": \"Cairo\",\n        \"venue\": \"Cairo Opera House\",\n        \"capacity\": 3,\n        \"category\": \"6a8ef19454ac97683de6d0ae\",\n        \"createdBy\": \"6a8ef19454ac97683de6d0b1\",\n        \"createdAt\": \"2026-08-26T14:00:52.956Z\",\n        \"updatedAt\": \"2026-08-26T14:00:52.956Z\"\n      },\n      {\n        \"_id\": \"6a8ef19454ac97683de6d0b5\",\n        \"title\": \"Backend Engineering Summit\",\n        \"description\": \"Talks on Node.js, databases, and system design\",\n        \"date\": \"2026-10-01T00:00:00.000Z\",\n        \"city\": \"Giza\",\n        \"venue\": \"Smart Village Conference Hall\",\n        \"capacity\": 2,\n        \"category\": \"6a8ef19454ac97683de6d0af\",\n        \"createdBy\": \"6a8ef19454ac97683de6d0b1\",\n        \"createdAt\": \"2026-08-26T14:00:52.956Z\",\n        \"updatedAt\": \"2026-08-26T14:00:52.956Z\"\n      },\n      {\n        \"_id\": \"6a904b289a1792c96e692ec5\",\n        \"title\": \"Backend Engineering Summit\",\n        \"description\": \"Talks on Node.js, databases, and system design\",\n        \"date\": \"2026-10-01T00:00:00.000Z\",\n        \"city\": \"Giza\",\n        \"venue\": \"Smart Village Conference Hall\",\n        \"capacity\": 2,\n        \"category\": \"6a8ef19454ac97683de6d0af\",\n        \"createdBy\": \"6a8ef19454ac97683de6d0b1\",\n        \"createdAt\": \"2026-08-27T14:35:20.842Z\",\n        \"updatedAt\": \"2026-08-27T14:35:20.842Z\"\n      },\n      {\n        \"_id\": \"6a8ef19454ac97683de6d0b6\",\n        \"title\": \"Cairo Marathon\",\n        \"description\": \"Annual city marathon\",\n        \"date\": \"2026-11-20T00:00:00.000Z\",\n        \"city\": \"Cairo\",\n        \"venue\": \"Downtown Cairo\",\n        \"capacity\": 100,\n        \"category\": \"6a8ef19454ac97683de6d0b0\",\n        \"createdBy\": \"6a8ef19454ac97683de6d0b1\",\n        \"createdAt\": \"2026-08-26T14:00:52.957Z\",\n        \"updatedAt\": \"2026-08-26T14:00:52.957Z\"\n      }\n    ],\n    \"pagination\": {\n      \"totalDocuments\": 6,\n      \"totalPages\": 1,\n      \"currentPage\": 1,\n      \"limit\": 10\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get event by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/events/6a8ef19454ac97683de6d0b5",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "events",
+                "6a8ef19454ac97683de6d0b5"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get event by ID",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/events/6a8ef19454ac97683de6d0b5",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events",
+                    "6a8ef19454ac97683de6d0b5"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "464"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"1d0-/HCoI2Ow5+7sMlqDo6Gn0puRSy8\""
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 27 Aug 2026 14:36:04 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"success\",\n  \"message\": \"Event specified is found!\",\n  \"data\": {\n    \"_id\": \"6a8ef19454ac97683de6d0b5\",\n    \"title\": \"Backend Engineering Summit\",\n    \"description\": \"Talks on Node.js, databases, and system design\",\n    \"date\": \"2026-10-01T00:00:00.000Z\",\n    \"city\": \"Giza\",\n    \"venue\": \"Smart Village Conference Hall\",\n    \"capacity\": 2,\n    \"category\": \"6a8ef19454ac97683de6d0af\",\n    \"createdBy\": \"6a8ef19454ac97683de6d0b1\",\n    \"__v\": 0,\n    \"createdAt\": \"2026-08-26T14:00:52.956Z\",\n    \"updatedAt\": \"2026-08-26T14:00:52.956Z\"\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update event",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"New title\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/events/6a8ef19454ac97683de6d0b5",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "events",
+                "6a8ef19454ac97683de6d0b5"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Update event",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\": \"New title\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/events/6a8ef19454ac97683de6d0b5",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events",
+                    "6a8ef19454ac97683de6d0b5"
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "770"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"302-Lm8HMLZMj2kdLVAWsPDDeP5Y6wQ\""
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 27 Aug 2026 14:37:01 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"fail\",\n  \"message\": \"User cannot perform this action\",\n  \"data\": null,\n  \"stack\": \"Error: User cannot perform this action\\n    at F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\middleware\\\\verifyRole.js:10:19\\n    at Layer.handleRequest (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\node_modules\\\\router\\\\lib\\\\layer.js:152:17)\\n    at next (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\node_modules\\\\router\\\\lib\\\\route.js:157:13)\\n    at protect (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\middleware\\\\authMiddleware.js:19:5)\\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\"\n}"
+            },
+            {
+              "name": "Update event",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\": \"New title\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/events/6a8ef19454ac97683de6d0b5",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events",
+                    "6a8ef19454ac97683de6d0b5"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "448"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"1c0-uS/uOh1w4FY0PotmHP7YgkX1+rI\""
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 27 Aug 2026 14:44:37 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"success\",\n  \"message\": \"Event updated successfully\",\n  \"data\": {\n    \"_id\": \"6a8ef19454ac97683de6d0b5\",\n    \"title\": \"New title\",\n    \"description\": \"Talks on Node.js, databases, and system design\",\n    \"date\": \"2026-10-01T00:00:00.000Z\",\n    \"city\": \"Giza\",\n    \"venue\": \"Smart Village Conference Hall\",\n    \"capacity\": 2,\n    \"category\": \"6a8ef19454ac97683de6d0af\",\n    \"createdBy\": \"6a8ef19454ac97683de6d0b1\",\n    \"__v\": 0,\n    \"createdAt\": \"2026-08-26T14:00:52.956Z\",\n    \"updatedAt\": \"2026-08-27T14:44:37.582Z\"\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete event",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/events/6a8ef19454ac97683de6d0b5",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "events",
+                "6a8ef19454ac97683de6d0b5"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Delete event",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/events/6a8ef19454ac97683de6d0b5",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events",
+                    "6a8ef19454ac97683de6d0b5"
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "770"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"302-Lm8HMLZMj2kdLVAWsPDDeP5Y6wQ\""
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 27 Aug 2026 15:31:20 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"fail\",\n  \"message\": \"User cannot perform this action\",\n  \"data\": null,\n  \"stack\": \"Error: User cannot perform this action\\n    at F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\middleware\\\\verifyRole.js:10:19\\n    at Layer.handleRequest (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\node_modules\\\\router\\\\lib\\\\layer.js:152:17)\\n    at next (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\node_modules\\\\router\\\\lib\\\\route.js:157:13)\\n    at protect (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\middleware\\\\authMiddleware.js:19:5)\\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\"\n}"
+            },
+            {
+              "name": "Delete event",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/events/6a8ef19454ac97683de6d0b5",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events",
+                    "6a8ef19454ac97683de6d0b5"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "448"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"1c0-YsgZZsjBVDsS1LuIE9EoecfSLqU\""
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 27 Aug 2026 15:32:09 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"success\",\n  \"message\": \"Event specified is deleted\",\n  \"data\": {\n    \"_id\": \"6a8ef19454ac97683de6d0b5\",\n    \"title\": \"New title\",\n    \"description\": \"Talks on Node.js, databases, and system design\",\n    \"date\": \"2026-10-01T00:00:00.000Z\",\n    \"city\": \"Giza\",\n    \"venue\": \"Smart Village Conference Hall\",\n    \"capacity\": 2,\n    \"category\": \"6a8ef19454ac97683de6d0af\",\n    \"createdBy\": \"6a8ef19454ac97683de6d0b1\",\n    \"__v\": 0,\n    \"createdAt\": \"2026-08-26T14:00:52.956Z\",\n    \"updatedAt\": \"2026-08-27T14:44:37.582Z\"\n  }\n}"
+            },
+            {
+              "name": "Delete event",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/events/6a8ef19454ac97683de6d0b5",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "events",
+                    "6a8ef19454ac97683de6d0b5"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "345"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"159-gQRY8WP+DD2uzS3O40G0WMYjKUI\""
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 27 Aug 2026 15:32:30 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"fail\",\n  \"message\": \"Event specified is not found\",\n  \"data\": null,\n  \"stack\": \"Error: Event specified is not found\\n    at deleteEvent (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\controllers\\\\eventController.js:77:17)\\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Registrations",
+      "item": [
+        {
+          "name": "Create registration",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"eventId\":\"6a8ef19454ac97683de6d0b5\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/registrations",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "registrations"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Create registration",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"eventId\":\"6a8ef19454ac97683de6d0b5\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/registrations",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "registrations"
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "770"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"302-Lm8HMLZMj2kdLVAWsPDDeP5Y6wQ\""
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 27 Aug 2026 14:58:09 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"fail\",\n  \"message\": \"User cannot perform this action\",\n  \"data\": null,\n  \"stack\": \"Error: User cannot perform this action\\n    at F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\middleware\\\\verifyRole.js:10:19\\n    at Layer.handleRequest (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\node_modules\\\\router\\\\lib\\\\layer.js:152:17)\\n    at next (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\node_modules\\\\router\\\\lib\\\\route.js:157:13)\\n    at protect (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\middleware\\\\authMiddleware.js:19:5)\\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\"\n}"
+            },
+            {
+              "name": "Create registration",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"eventId\":\"6a8ef19454ac97683de6d0b5\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/registrations",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "registrations"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "277"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"115-q246wLedF0dDtjSlBUCbSz+GrtM\""
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 27 Aug 2026 15:00:14 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"success\",\n  \"message\": \"Registration is successful\",\n  \"data\": {\n    \"user\": \"6a8ef19454ac97683de6d0b2\",\n    \"event\": \"6a8ef19454ac97683de6d0b5\",\n    \"status\": \"confirmed\",\n    \"_id\": \"6a9050fd35f7764d3a11444e\",\n    \"createdAt\": \"2026-08-27T15:00:13.940Z\",\n    \"updatedAt\": \"2026-08-27T15:00:13.940Z\",\n    \"__v\": 0\n  }\n}"
+            },
+            {
+              "name": "Create registration",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"eventId\":\"6a8ef19454ac97683de6d0b5\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/registrations",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "registrations"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "337"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"151-xpc14OkKXqC007TiFtxfWOJaYhc\""
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 27 Aug 2026 15:00:50 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"fail\",\n  \"message\": \"Already registered\",\n  \"data\": null,\n  \"stack\": \"Error: Already registered\\n    at registerForEvent (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\controllers\\\\registrationController.js:47:19)\\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get my registrations",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/registrations/my",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "registrations",
+                "my"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get my registrations",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/registrations/my",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "registrations",
+                    "my"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "1220"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"4c4-MxHZ+aHZTPbjsRP7Xf1k95LtwGg\""
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 27 Aug 2026 15:04:45 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"success\",\n  \"message\": \"All of your registrations are retrieved\",\n  \"data\": [\n    {\n      \"_id\": \"6a8ef19554ac97683de6d0b7\",\n      \"user\": \"6a8ef19454ac97683de6d0b2\",\n      \"event\": {\n        \"_id\": \"6a8ef19454ac97683de6d0b4\",\n        \"title\": \"Elden Ring Live Concert\",\n        \"description\": \"An orchestral tribute to the Elden Ring soundtrack\",\n        \"date\": \"2026-09-15T00:00:00.000Z\",\n        \"city\": \"Cairo\",\n        \"venue\": \"Cairo Opera House\",\n        \"capacity\": 3,\n        \"category\": \"6a8ef19454ac97683de6d0ae\",\n        \"createdBy\": \"6a8ef19454ac97683de6d0b1\",\n        \"__v\": 0,\n        \"createdAt\": \"2026-08-26T14:00:52.956Z\",\n        \"updatedAt\": \"2026-08-26T14:00:52.956Z\"\n      },\n      \"status\": \"confirmed\",\n      \"__v\": 0,\n      \"createdAt\": \"2026-08-26T14:00:53.029Z\",\n      \"updatedAt\": \"2026-08-26T14:00:53.029Z\"\n    },\n    {\n      \"_id\": \"6a9050fd35f7764d3a11444e\",\n      \"user\": \"6a8ef19454ac97683de6d0b2\",\n      \"event\": {\n        \"_id\": \"6a8ef19454ac97683de6d0b5\",\n        \"title\": \"New title\",\n        \"description\": \"Talks on Node.js, databases, and system design\",\n        \"date\": \"2026-10-01T00:00:00.000Z\",\n        \"city\": \"Giza\",\n        \"venue\": \"Smart Village Conference Hall\",\n        \"capacity\": 2,\n        \"category\": \"6a8ef19454ac97683de6d0af\",\n        \"createdBy\": \"6a8ef19454ac97683de6d0b1\",\n        \"__v\": 0,\n        \"createdAt\": \"2026-08-26T14:00:52.956Z\",\n        \"updatedAt\": \"2026-08-27T14:44:37.582Z\"\n      },\n      \"status\": \"confirmed\",\n      \"createdAt\": \"2026-08-27T15:00:13.940Z\",\n      \"updatedAt\": \"2026-08-27T15:00:13.940Z\",\n      \"__v\": 0\n    }\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete registration",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/registrations/6a8ef19554ac97683de6d0b7",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "registrations",
+                "6a8ef19554ac97683de6d0b7"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Delete registration",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/registrations/6a8ef19454ac97683de6d0b5",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "registrations",
+                    "6a8ef19454ac97683de6d0b5"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "396"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"18c-U3l1sO8ZzWC93mlcq4biLURdJe8\""
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 27 Aug 2026 15:06:24 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"fail\",\n  \"message\": \"Registration not found or belongs to another user!\",\n  \"data\": null,\n  \"stack\": \"Error: Registration not found or belongs to another user!\\n    at deleteMyReg (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\controllers\\\\registrationController.js:79:17)\\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\"\n}"
+            },
+            {
+              "name": "Delete registration",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/registrations/6a8ef19554ac97683de6d0b7",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "registrations",
+                    "6a8ef19554ac97683de6d0b7"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "78"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"4e-cWffnlndNJwqIsm216m44UZq7no\""
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 27 Aug 2026 15:07:20 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"success\",\n  \"message\": \"Registration deleted successfully\",\n  \"data\": null\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Announcements",
+      "item": [
+        {
+          "name": "Create announcement",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"event\": \"6a8ef19454ac97683de6d0b5\",\r\n    \"text\": \"Welcome to our event\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/announcements",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "announcements"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Create announcement",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"event\": \"6a8ef19454ac97683de6d0b5\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/announcements",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "announcements"
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "770"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"302-Lm8HMLZMj2kdLVAWsPDDeP5Y6wQ\""
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 27 Aug 2026 15:22:07 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"fail\",\n  \"message\": \"User cannot perform this action\",\n  \"data\": null,\n  \"stack\": \"Error: User cannot perform this action\\n    at F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\middleware\\\\verifyRole.js:10:19\\n    at Layer.handleRequest (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\node_modules\\\\router\\\\lib\\\\layer.js:152:17)\\n    at next (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\node_modules\\\\router\\\\lib\\\\route.js:157:13)\\n    at protect (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\middleware\\\\authMiddleware.js:19:5)\\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\"\n}"
+            },
+            {
+              "name": "Create announcement",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"event\": \"6a8ef19454ac97683de6d0b5\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/announcements",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "announcements"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "1581"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"62d-Z+ze54dmS8WEXJUqtKnCvEsQ2Pg\""
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 27 Aug 2026 15:23:06 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"fail\",\n  \"message\": \"Invalid input data: Path `text` is required.\",\n  \"data\": null,\n  \"stack\": \"Error: Invalid input data: Path `text` is required.\\n    at errorHandler (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\middleware\\\\errorHandler.js:34:13)\\n    at Layer.handleError (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\node_modules\\\\router\\\\lib\\\\layer.js:116:17)\\n    at trimPrefix (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\node_modules\\\\router\\\\index.js:340:13)\\n    at F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\node_modules\\\\router\\\\index.js:297:9\\n    at processParams (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\node_modules\\\\router\\\\index.js:582:12)\\n    at next (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\node_modules\\\\router\\\\index.js:291:5)\\n    at Layer.handleError (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\node_modules\\\\router\\\\lib\\\\layer.js:111:12)\\n    at trimPrefix (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\node_modules\\\\router\\\\index.js:340:13)\\n    at F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\node_modules\\\\router\\\\index.js:297:9\\n    at processParams (F:\\\\programming folder\\\\Web development\\\\start_again\\\\L4\\\\30911040105279-EventPulse\\\\node_modules\\\\router\\\\index.js:582:12)\"\n}"
+            },
+            {
+              "name": "Create announcement",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"event\": \"6a8ef19454ac97683de6d0b5\",\r\n    \"text\": \"Welcome to our event\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/announcements",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "announcements"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "296"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"128-YgcWfXTz0CouaZyAkqgVwHuL9U0\""
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 27 Aug 2026 15:23:32 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"success\",\n  \"message\": \"Announcement was sent successfully\",\n  \"data\": {\n    \"event\": \"6a8ef19454ac97683de6d0b5\",\n    \"sender\": \"6a8ef19454ac97683de6d0b1\",\n    \"text\": \"Welcome to our event\",\n    \"_id\": \"6a90567435f7764d3a114450\",\n    \"createdAt\": \"2026-08-27T15:23:32.354Z\",\n    \"updatedAt\": \"2026-08-27T15:23:32.354Z\",\n    \"__v\": 0\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get announcements",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/announcements/6a8ef19454ac97683de6d0b5",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "announcements",
+                "6a8ef19454ac97683de6d0b5"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get announcements",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/announcements/6a8ef19454ac97683de6d0b5",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "announcements",
+                    "6a8ef19454ac97683de6d0b5"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "857"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"359-S9X82DeWUQ8mYecjDKaaIurpNHg\""
+                },
+                {
+                  "key": "date",
+                  "value": "Thu, 27 Aug 2026 15:26:33 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"success\",\n  \"message\": \"All announcements are retrieved\",\n  \"data\": [\n    {\n      \"_id\": \"6a8ef19554ac97683de6d0bc\",\n      \"event\": \"6a8ef19454ac97683de6d0b5\",\n      \"sender\": {\n        \"_id\": \"6a8ef19454ac97683de6d0b1\",\n        \"name\": \"Admin User\",\n        \"email\": \"admin@eventpulse.com\",\n        \"role\": \"admin\",\n        \"createdAt\": \"2026-08-26T14:00:52.475Z\",\n        \"updatedAt\": \"2026-08-26T14:00:52.475Z\",\n        \"__v\": 0\n      },\n      \"text\": \"Wifi password for the venue: backend2026\",\n      \"__v\": 0,\n      \"createdAt\": \"2026-08-26T14:00:53.098Z\",\n      \"updatedAt\": \"2026-08-26T14:00:53.098Z\"\n    },\n    {\n      \"_id\": \"6a90567435f7764d3a114450\",\n      \"event\": \"6a8ef19454ac97683de6d0b5\",\n      \"sender\": {\n        \"_id\": \"6a8ef19454ac97683de6d0b1\",\n        \"name\": \"Admin User\",\n        \"email\": \"admin@eventpulse.com\",\n        \"role\": \"admin\",\n        \"createdAt\": \"2026-08-26T14:00:52.475Z\",\n        \"updatedAt\": \"2026-08-26T14:00:52.475Z\",\n        \"__v\": 0\n      },\n      \"text\": \"Welcome to our event\",\n      \"createdAt\": \"2026-08-27T15:23:32.354Z\",\n      \"updatedAt\": \"2026-08-27T15:23:32.354Z\",\n      \"__v\": 0\n    }\n  ]\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

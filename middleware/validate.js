@@ -90,8 +90,10 @@ const updateEventRules = [
     .isISO8601()
     .withMessage('This is not a valid date'),
   body('city')
+    .optional()
     .trim(),
   body('venue')
+    .optional()
     .trim(),
   body('capacity')
     .optional()
@@ -106,9 +108,8 @@ const updateEventRules = [
 const getEventsRules = [
   query('search')
     .optional()
-    .toLowerCase()
-    .isIn(['title', 'description'])
-    .withMessage('search only supports title and description'),
+    .trim()
+    .isString(),
   query('startDate')
     .optional()
     .isISO8601()
